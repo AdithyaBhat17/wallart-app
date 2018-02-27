@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "127133204407",
+    "firebase_url": "https://wallart-e09f1.firebaseio.com",
+    "project_id": "wallart-e09f1",
+    "storage_bucket": "wallart-e09f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127133204407:android:708f639e3fa8e0a3",
+        "android_client_info": {
+          "package_name": "com.example.adithya.wallart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127133204407-k51vphkbvto2pr7oa8co67tf8bnimlpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn1C4Hq96IdmVWkXkYRvUBAvVbJNF5M0o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
