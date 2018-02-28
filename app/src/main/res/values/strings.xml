@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WallArt</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6169282934867016/9375307047</string>
+    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

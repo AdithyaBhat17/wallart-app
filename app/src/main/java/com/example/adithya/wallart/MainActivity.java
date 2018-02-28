@@ -6,7 +6,6 @@ import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -14,15 +13,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.onesignal.OneSignal;
 
 
@@ -30,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private Activity mActivity;
     private WebView mWebView;
+    private AdView mAdView;
 
     private static final int MY_PERMISSION_REQUEST_CODE = 123;
 
@@ -41,36 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
         setContentView(R.layout.activity_main);
-        if (getIntent().getExtras() != null) {
-
-            for (String key : getIntent().getExtras().keySet()) {
-                String value = getIntent().getExtras().getString(key);
-
-                if (key.equals("AnotherActivity") && value.equals("True")) {
-                    Intent intent = new Intent(this, AnotherActivity.class);
-                    intent.putExtra("value", value);
-                    startActivity(intent);
-                    finish();
-                }
-
-            }
-        }
-
-        subscribeToPushService();
-
-    }
-
-    private void subscribeToPushService() {
-        FirebaseMessaging.getInstance().subscribeToTopic("notifications");
-
-        Log.d("AndroidBash", "Subscribed");
-        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-
-        // Log and toast
-        Log.d("AndroidBash", token);
-//        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
 
         // Get the application context
         mContext = getApplicationContext();
@@ -78,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Get the widget reference from xml layout
         mWebView = findViewById(R.id.webview);
+
+
+        MobileAds.initialize(this, "ca-app-pub-6169282934867016~2226255394");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         // Check permission for write external storage
         checkPermission();
