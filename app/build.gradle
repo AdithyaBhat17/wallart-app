@@ -14,8 +14,8 @@ android {
         applicationId "com.example.adithya.wallart"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [onesignal_app_id               : "ae5fc61a-4fb7-4e10-9771-19d63da640a5",
                                 // Project number pulled from dashboard, local value is ignored.
