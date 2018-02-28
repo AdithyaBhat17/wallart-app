@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "127133204407-2m0h5tcla4eh58qm8sml8maf51pnvv4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adithya.wallart",
+            "certificate_hash": "574bf6654ccb0006742b1a9980eada89ecb92fe2"
+          }
+        },
+        {
           "client_id": "127133204407-k51vphkbvto2pr7oa8co67tf8bnimlpr.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127133204407-k51vphkbvto2pr7oa8co67tf8bnimlpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
